@@ -1,4 +1,3 @@
-//import { Fragment } from 'react'
 import { Popover } from '@headlessui/react'
 import { CogIcon, ChatIcon, FireIcon, UsersIcon } from '@heroicons/react/outline'
 
@@ -27,7 +26,7 @@ const features = [
       'Do you only care for the moderation tools and think some of the extra features are unnecessary? Bento 🍱 allows you to enable and disable features according to your server and its preferences. Don\'t want NSFW results in your media? Disable it. Don\'t want media at all? Disable it.',
     icon: CogIcon,
   },
-]
+];
 
 export default function Home() {
   return (
@@ -141,6 +140,5 @@ export default function Home() {
       </div>
     </div>
     </div>
-    
-  )
+  );
 }

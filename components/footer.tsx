@@ -18,16 +18,16 @@ export default function Footer() {
                             Links
                         </p>
                         <p>
-                            <a
-                                href="https://github.com/banner4422/bento"
-                                className="text-gray-300"
-                            >
-                                GitHub
-                            </a>
-                            <br />
-                            <Link href="/changelog">
-                                <a className="text-gray-300">Changelog</a>
-                            </Link>
+                        <a
+                            href="https://github.com/thebentobot"
+                            className="text-gray-300"
+                        >
+                            GitHub
+                        </a>
+                        <br />
+                        <Link href="/changelog">
+                            <a className="text-gray-300">Changelog</a>
+                        </Link>
                         </p>
                     </div>
                 </div>

@@ -70,7 +70,7 @@ export default function About() {
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">
             All the source code are open-source and available on {" "}
                     <a
-                        href="https://github.com/banner4422/bento"
+                        href="https://github.com/thebentobot"
                         target="_blank"
                         className="text-blue-400"
                     >
@@ -82,5 +82,5 @@ export default function About() {
       </div>
       </div>
       
-    )
+    );
   }
