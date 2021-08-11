@@ -11,12 +11,18 @@
   "dependencies": {
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
+    "dotenv": "^10.0.0",
     "next": "11.0.0",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.4",
     "postgraphile": "^4.12.3",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sequelize": "^6.6.5",
+    "sequelize-auto": "^0.8.3"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.5.11",
     "@types/react": "17.0.11",
     "autoprefixer": "^10.2.6",
     "eslint": "7.29.0",

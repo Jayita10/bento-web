@@ -43,6 +43,7 @@ export default function Home() {
           >
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
+
           <Popover>
             {({ open }) => (
               <>
@@ -76,7 +77,7 @@ export default function Home() {
               <p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
               A Discord bot with server moderation tools and various entertaining commands.
               </p>
-              <p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+              <p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
               (INSERT STATS HERE)
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
