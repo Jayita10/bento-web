@@ -8,7 +8,10 @@ export default function About() {
               About Bento 🍱
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">
-              Bento 🍱 is a quality and well supported Discord Bot that constantly improves and always delivers when you need it the most. INSERT A NEW/MORE TEXT
+              Bento 🍱 is a Discord bot that covers the standard features of most Discord bots, but with a few extra features and a focus on quality delivery.
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">
+              Bento 🍱 was started as a project to learn JavaScript and programming in general, and is a project of continuous learning and improvement.
             </p>
           </div>
         </div>
@@ -58,14 +61,7 @@ export default function About() {
                         className="text-blue-400"
                     >
                         Next.js
-                    </a>{" "} and {" "}
-                    <a
-                        href="https://www.graphile.org/postgraphile/"
-                        target="_blank"
-                        className="text-blue-400"
-                    >
-                        PostGraphile
-                    </a>.{" "}
+                    </a>
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">
             All the source code are open-source and available on {" "}
