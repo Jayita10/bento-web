@@ -11,7 +11,10 @@
   "dependencies": {
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
+    "@skyra/discord-components-core": "^2.7.1",
+    "@skyra/discord-components-react": "^2.7.1",
     "dotenv": "^10.0.0",
+    "moment": "^2.29.1",
     "next": "11.0.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.4",

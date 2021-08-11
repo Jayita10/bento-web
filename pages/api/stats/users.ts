@@ -7,9 +7,14 @@ type Data = {
   count: number
 }
 
+export async function getData() {
+  initModels(database)
+  const userData = await user.findAndCountAll();
+  return { count: userData.count }
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-    initModels(database)
-    const userData = await user.findAndCountAll();
+    const jsonData = await getData()
     
-    res.status(200).json({count: userData.count})
+    res.status(200).json(jsonData)
 }

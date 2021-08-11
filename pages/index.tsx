@@ -1,5 +1,9 @@
 import { Popover } from '@headlessui/react'
 import { CogIcon, ChatIcon, FireIcon, UsersIcon } from '@heroicons/react/outline'
+import { GetServerSideProps } from 'next'
+import Head from 'next/head'
+import { getData as userDataFetch } from './api/stats/users'
+import { getData as serverDataFetch } from './api/stats/servers'
 
 const features = [
   {
@@ -11,26 +15,45 @@ const features = [
   {
     name: 'Amusing Chat XP System For Your Users',
     description:
-      'Users gain XP for every minute they chat and are able to see who has written the most by the server\'s own leaderboard. Every day, users are able to give a 🍱 to another user. Serverwide leaderboards are available as well',
+      'Users gain XP for every minute they chat and are able to see who has written the most by the server\'s own leaderboard. Every 12th hour, users are able to give a 🍱 to another user. Serverwide leaderboards are available as well',
     icon: UsersIcon,
   },
   {
     name: 'Amazing Extra Features',
     description:
-      'Have your TikTok links embedded, check the weather or time anywhere in the world, check your horoscope, look up at GIF or picture, get an Urban Dictionary definition, compare LastFM statistics and make your own custom tags',
+      'Have your TikTok links embedded, check the weather or time anywhere in the world, check your horoscope, look up at Tenor GIF, get an Urban Dictionary definition, compare LastFM statistics, set reminders or keyword notifications, and make your own custom tags to remember good memes or memories',
     icon: FireIcon,
   },
   {
     name: 'Accommodating Server Settings',
     description:
-      'Do you only care for the moderation tools and think some of the extra features are unnecessary? Bento 🍱 allows you to enable and disable features according to your server and its preferences. Don\'t want NSFW results in your media? Disable it. Don\'t want media at all? Disable it.',
+      'Do you only care for the moderation tools and think some of the extra features are unnecessary? Bento 🍱 allows you to enable and disable features according to your server and its preferences. Don\'t want TikToks on your server? Disable it. Don\'t want GIFs at all? Disable it.',
     icon: CogIcon,
   },
 ];
 
-export default function Home() {
+export interface Data {
+  usersCount: number,
+  serversCount: number
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const resUsers = await userDataFetch()
+  const resServers = await serverDataFetch()
+
+  return {
+    props: {
+      usersCount: resUsers.count, serversCount: resServers.count
+    },
+  }
+}
+
+export default function Home({ usersCount, serversCount }: Data) {
   return (
     <div>
+      <Head>
+        <title>Bento 🍱</title>
+      </Head>
     <div className="relative bg-gray-800 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10 pb-8 bg-gray-800 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -78,12 +101,12 @@ export default function Home() {
               A Discord bot with server moderation tools and various entertaining commands.
               </p>
               <p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              (INSERT STATS HERE)
+              {usersCount} Users being fed by Bento 🍱 on {serversCount - 2} Servers
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
                   <a
-                    href="#"
+                    href="https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=261926943991&scope=bot%20applications.commands"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-white md:py-4 md:text-lg md:px-10"
                   >
                     Add Bento to your server
@@ -113,7 +136,6 @@ export default function Home() {
     <div className="py-12 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-base text-yellow-300 font-semibold tracking-wide uppercase">Bento</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
             The bot you did not know you needed
           </p>
@@ -137,8 +159,24 @@ export default function Home() {
             ))}
           </dl>
         </div>
-      </div>
+        <div className="lg:text-center">
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+            Check all commands by clicking below!
+          </p>
+          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:text-center">
+
+            <div className="rounded-md shadow">
+                  <a
+                    href="/commands"
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-white md:py-4 md:text-lg md:px-10"
+                  >
+                    A list of all commands
+                  </a>
+                </div>
+              </div>
+        </div>
     </div>
+      </div>
     </div>
   );
 }

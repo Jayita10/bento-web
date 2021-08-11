@@ -7,9 +7,14 @@ type Data = {
   count: number
 }
 
+export async function getData() {
+  initModels(database)
+  const serverData = await guild.findAndCountAll();
+  return { count: serverData.count }
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-    initModels(database)
-    const serverData = await guild.findAndCountAll();
+    const jsonData = await getData()
     
-    res.status(200).json({count: serverData.count})
+    res.status(200).json(jsonData)
 }
