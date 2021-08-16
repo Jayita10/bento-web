@@ -1,9 +1,10 @@
 import { Popover } from '@headlessui/react'
-import { CogIcon, ChatIcon, FireIcon, UsersIcon } from '@heroicons/react/outline'
+import { CogIcon, ChatIcon, FireIcon, UsersIcon, ArrowSmUpIcon } from '@heroicons/react/outline'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { getData as userDataFetch } from './api/stats/users'
 import { getData as serverDataFetch } from './api/stats/servers'
+import { motion, Variants } from "framer-motion"
 
 const features = [
   {
@@ -32,6 +33,34 @@ const features = [
   },
 ];
 
+const animation: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+    }
+  }
+}
+
+const bottomAnimation: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+    }
+  }
+}
+
 export interface Data {
   usersCount: number,
   serversCount: number
@@ -55,6 +84,7 @@ export default function Home({ usersCount, serversCount }: Data) {
         <title>Bento 🍱</title>
       </Head>
     <div className="relative bg-gray-800 overflow-hidden">
+    
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10 pb-8 bg-gray-800 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
           <svg
@@ -92,90 +122,100 @@ export default function Home({ usersCount, serversCount }: Data) {
           </Popover>
 
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+            <motion.div className="sm:text-center lg:text-left">
+              <motion.h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl" initial='hidden' animate='show' variants={animation}>
                 <span className="block xl:inline">The Discord Bot</span>{' '}
                 <span className="block text-yellow-300 xl:inline">Bento</span>
-              </h1>
-              <p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+              </motion.h1>
+              <motion.p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" initial='hidden' animate='show' variants={animation}>
               A Discord bot with server moderation tools and various entertaining commands.
-              </p>
-              <p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              {usersCount} Users being fed by Bento 🍱 on {serversCount - 2} Servers
-              </p>
+              </motion.p>
+              <motion.p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" initial='hidden' animate='show' variants={animation}>
+              A Bento Box 🍱 is ready for {Math.floor(usersCount / 100) / 10.0 + "k"} Users on {serversCount - 2} Servers
+              </motion.p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
-                  <a
+                  <motion.a
                     href="https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=261926943991&scope=bot%20applications.commands"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-white md:py-4 md:text-lg md:px-10"
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10"
+                    whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.9 }}
+                        initial='hidden' animate='show' variants={animation}
                   >
                     Add Bento to your server
-                  </a>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <a
-                    href="/commands"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-700 bg-yellow-100 hover:bg-yellow-200 md:py-4 md:text-lg md:px-10"
-                  >
-                    View commands
-                  </a>
-                </div>
+                  </motion.a>
               </div>
-            </div>
+              <div className="mt-3 sm:mt-0 sm:ml-3 shadow-lg">
+                <motion.a
+                  href="/commands"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 md:py-4 md:text-lg md:px-10"
+                  whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.9 }}
+                      initial='hidden' animate='show' variants={animation}
+                >
+                  View Commands
+                </motion.a>
+              </div>
+              </div>
+            </motion.div>
           </main>
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
+        <motion.img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
           src="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024"
           alt=""
+          initial='hidden' animate='show' variants={animation}
         />
       </div>
     </div>
     <div className="py-12 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+      <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={bottomAnimation}>
+        <motion.div className="lg:text-center" whileHover={{scale: 1.10}}>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center">
             The bot you did not know you needed
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">
+          <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto sm:text-center sm:max-w-xl sm:mx-auto">
             Bento 🍱 is a quality and well supported Discord Bot that constantly improves and always delivers when you need it the most 
           </p>
-        </div>
+        </motion.div>
 
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
             {features.map((feature) => (
-              <div key={feature.name} className="relative">
+              <motion.div key={feature.name} className="relative bg-gray-800 px-6 py-6 rounded shadow-lg" whileHover={{scale: 1.1}} initial='hidden' animate='show' variants={animation}>
                 <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-300 text-white">
+                  <motion.div whileHover={{rotate: 360, transition: {type: 'spring', duration: 1.5, bounce: 0.25} }} className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-300 text-white">
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
-                  </div>
+                  </motion.div>
                   <p className="ml-16 text-lg leading-6 font-medium text-white">{feature.name}</p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-gray-300">{feature.description}</dd>
-              </div>
+              </motion.div>
             ))}
           </dl>
         </div>
+        <br></br>
         <div className="lg:text-center">
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center">
             Check all commands by clicking below!
           </p>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:text-center">
 
             <div className="rounded-md shadow">
-                  <a
+                  <motion.a
                     href="/commands"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-white md:py-4 md:text-lg md:px-10"
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10"
+                    whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
                   >
-                    A list of all commands
-                  </a>
+                    A list of All Commands
+                  </motion.a>
                 </div>
               </div>
         </div>
-    </div>
+    </motion.div>
       </div>
     </div>
   );

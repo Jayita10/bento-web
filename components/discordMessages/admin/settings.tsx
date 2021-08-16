@@ -6,13 +6,13 @@ export default function Settings() {
         <DiscordMessages>
             <DiscordMessage profile='fiji'>?settings</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='https://bento.com' embedTitle='Server settings for Bento Bot' footerImage='https://cdn.discordapp.com/avatars/232584569289703424/a_eb8033c166bb275c48749af8c7b50d80.gif?size=1024' timestamp={moment().toDate()} thumbnail='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
+                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='/' embedTitle='Server settings for Bento Bot' footerImage='https://cdn.discordapp.com/avatars/232584569289703424/a_eb8033c166bb275c48749af8c7b50d80.gif?size=1024' timestamp={moment().toDate()}>
                     <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Tiktok' inline inlineIndex={1}>Enabled</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Media' inline inlineIndex={2}>Enabled</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Leaderboard' inline inlineIndex={3}>Enabled</DiscordEmbedField>
-                        <DiscordEmbedField fieldTitle='Server name enabled for global cases' inline inlineIndex={1}>Enabled</DiscordEmbedField>
-                        <DiscordEmbedField fieldTitle='Case reasons enabled for global cases' inline inlineIndex={2}>Enabled</DiscordEmbedField>
+                        <DiscordEmbedField fieldTitle='Server name enabled for global cases' inline inlineIndex={1}>Disabled</DiscordEmbedField>
+                        <DiscordEmbedField fieldTitle='Case reasons enabled for global cases' inline inlineIndex={2}>Disabled</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Welcome Messages' inline inlineIndex={3}>Disabled</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Bye Messages' inline inlineIndex={1}>Disabled</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Mod log channel' inline inlineIndex={2}>Not configured</DiscordEmbedField>

@@ -5,10 +5,11 @@ import type { user, userId } from './user';
 
 export interface guildMemberAttributes {
   guildMemberID?: number;
-  userID: number;
-  guildID: number;
+  userID: bigint;
+  guildID: bigint;
   xp: number;
   level: number;
+  avatarURL?: string;
 }
 
 export type guildMemberPk = "guildMemberID";
@@ -17,10 +18,11 @@ export type guildMemberCreationAttributes = Optional<guildMemberAttributes, guil
 
 export class guildMember extends Model<guildMemberAttributes, guildMemberCreationAttributes> implements guildMemberAttributes {
   guildMemberID?: number;
-  userID!: number;
-  guildID!: number;
+  userID!: bigint;
+  guildID!: bigint;
   xp!: number;
   level!: number;
+  avatarURL?: string;
 
   // guildMember belongsTo guild via guildID
   guild!: guild;
@@ -64,6 +66,10 @@ export class guildMember extends Model<guildMemberAttributes, guildMemberCreatio
     level: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    avatarURL: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   }, {
     sequelize,

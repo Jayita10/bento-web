@@ -20,14 +20,17 @@ export default function Footer() {
                         <p>
                         <a
                             href="https://github.com/thebentobot"
-                            className="text-gray-300"
+                            className="text-gray-300 hover:text-white"
                         >
                             GitHub
                         </a>
-                        <br />
-                        <Link href="/changelog">
-                            <a className="text-gray-300">Changelog</a>
-                        </Link>
+                        <br/>
+                        <a
+                            href="https://discord.gg/dd68WwP"
+                            className="text-gray-300 hover:text-white"
+                        >
+                            Discord Support Server
+                        </a>
                         </p>
                     </div>
                 </div>

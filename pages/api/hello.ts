@@ -1,4 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+
+// example from Next.js
+
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
