@@ -71,6 +71,7 @@ export default function About() {
                     <a
                         href="https://www.postgresql.org/"
                         target="_blank"
+                        rel="noreferrer"
                         className='text-postgresql hover:underline'
                     >
                         PostgreSQL
@@ -89,6 +90,7 @@ export default function About() {
                     <a
                         href="https://tailwindcss.com/"
                         target="_blank"
+                        rel="noreferrer"
                         className='text-tailwindcss hover:underline'
                     >
                         Tailwind CSS

@@ -59,7 +59,7 @@ export default function Example() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                <Link href="/">
+                <Link href="/" passHref>
                     <motion.p className="text-yellow-400 cursor-pointer hover:bg-yellow-400 hover:text-black hover:animate-pulse px-3 py-2 rounded-md text-sm font-medium" whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.9 }}>🍱 Bento</motion.p>
                 </Link>
