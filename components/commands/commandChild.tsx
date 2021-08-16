@@ -213,7 +213,7 @@ export default function CommandChild ({key, name, aliases, category, description
             <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
             Arguments is identical with the <a href='#bye' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
             Bye
-            </a> command's arguments
+            </a> command arguments
             </p>
             <div className='mt-2 opacity-50 group-hover:opacity-100'>
                 <Welcome1 />
@@ -348,7 +348,7 @@ export default function CommandChild ({key, name, aliases, category, description
             </div>
             <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
             Delete individual cases by <strong>case number</strong>. <br /> You need to confirm once before the delete happens, where it shows a preview of the case before you decide.
-            <br /> Once it's deleted, it can't be recovered.
+            <br /> Once it is deleted, it can not be recovered.
             </p>
             <div className='mt-2 opacity-50 group-hover:opacity-100'>
                 <CaseDelete />
@@ -361,7 +361,7 @@ export default function CommandChild ({key, name, aliases, category, description
                 <CaseSearch />
             </div>
             <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
-            Get a list of punishment cases from your server. <br /> You get all cases if you don't specify two dates.
+            Get a list of punishment cases from your server. <br /> You get all cases if you do not specify two dates.
             <br /> Ordered by the recent cases in the time period that are specified.
             </p>
             <div className='mt-2 opacity-50 group-hover:opacity-100'>

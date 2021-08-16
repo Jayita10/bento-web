@@ -7,7 +7,7 @@ export default function Time() {
                 ?time tokyo
             </DiscordMessage>
             <DiscordMessage profile='bentoBot' timestamp='08/15/2021'>
-            It's Aug 16, 2021 5:10 AM in Tokyo, Japan 🇯🇵
+            It is Aug 16, 2021 5:10 AM in Tokyo, Japan 🇯🇵
             </DiscordMessage>
         </DiscordMessages>
     )

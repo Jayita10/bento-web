@@ -15,7 +15,7 @@ export default function CaseDelete() {
                         <DiscordEmbedField fieldTitle='Date of occurence' inline inlineIndex={1}>Friday, July 30th 2021, 05:12:20 AM +00:00</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='User who gave the warning' inline inlineIndex={1}>Banner#1017</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='UserID for the User who gave the warning' inline inlineIndex={1}>232584569289703424</DiscordEmbedField>
-                        <DiscordEmbedField fieldTitle='Notes about this case' inline inlineIndex={1}>he's annoying he will get the boot at some point definitely</DiscordEmbedField>
+                        <DiscordEmbedField fieldTitle='Notes about this case' inline inlineIndex={1}>he is annoying he will get the boot at some point definitely</DiscordEmbedField>
                 </DiscordEmbedFields>
                 <span slot="footer">Warning Case Number: 3  </span>
                 </DiscordEmbed>

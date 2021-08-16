@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { Disclosure} from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { motion, Variants } from "framer-motion"
+import Link from 'next/link'
 
 function classNames(...classes:any) {
   return classes.filter(Boolean).join(' ');
@@ -58,11 +59,10 @@ export default function Example() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                <a href="/">
-                    <span className="sr-only">Workflow</span>
-                    <motion.p className="text-yellow-400 hover:bg-yellow-400 hover:text-black hover:animate-pulse px-3 py-2 rounded-md text-sm font-medium" whileHover={{ scale: 1.1 }}
+                <Link href="/">
+                    <motion.p className="text-yellow-400 cursor-pointer hover:bg-yellow-400 hover:text-black hover:animate-pulse px-3 py-2 rounded-md text-sm font-medium" whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.9 }}>🍱 Bento</motion.p>
-                </a>
+                </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">

@@ -18,7 +18,7 @@ export default function CommandsParent ({items}: commandsListInterface) {
     return (
         <motion.ul className='relative' >
             {items.map((command, i) => (
-                <motion.div  className='shadow-lg'>
+                <motion.div key={i} className='shadow-lg'>
                 <CommandChild 
                 key={i} 
                 name={command.name}

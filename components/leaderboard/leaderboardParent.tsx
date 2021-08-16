@@ -45,8 +45,8 @@ export default function LeaderboardParent({items}: userDataInterface) {
         <motion.ul className='relative' initial="hidden"
         animate="show"
         variants={animation}>
-            {items.map(DiscordUser => (
-                <motion.div variants={animationItem} className='shadow-lg'>
+            {items.map((DiscordUser, i) => (
+                <motion.div key={i} variants={animationItem} className='shadow-lg'>
                 <LeaderboardChild 
                 key={DiscordUser.userID} 
                 rank={DiscordUser.rank}

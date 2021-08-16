@@ -12,7 +12,7 @@ export default function BentoGreeting() {
                 <br></br>
                 If the prefix is conflicting because of other bots, you can change it by writing <code>{`?prefix <NEW PREFIX>`}</code>
                 <br></br>
-                Use <code>?settings</code> to check what features I've enabled or disabled by default.
+                Use <code>?settings</code> to check what features I have enabled or disabled by default.
                 <br></br>
                 Use <code>?commands</code> to see a list of all my commands and <code>{`?help <command name>`}</code> to get help or info about a command.
                     <DiscordEmbedFields slot='fields'>

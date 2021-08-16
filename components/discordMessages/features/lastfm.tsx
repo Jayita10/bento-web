@@ -53,7 +53,7 @@ export default function Lastfm() {
                 <br />
                 <strong>4. forever</strong> by <a href='https://www.last.fm/music/Charli+XCX/_/forever'>Charli XCX</a> - 30 plays
                 <br />
-                <strong>5. Blowin' Minds (Skateboard) (feat. A$AP Rocky, A$AP Nast, A$AP Ant, Chief Keef & Playboi Carti)</strong> by <a href='https://www.last.fm/music/A$AP+Mob/_/Blowin%27+Minds+(Skateboard)+(feat.+A$AP+Rocky,+A$AP+Nast,+A$AP+Ant,+Chief+Keef+&+Playboi+Carti)'>A$AP Mob</a> - 27 plays
+                <strong>5. Blowin’ Minds (Skateboard) (feat. A$AP Rocky, A$AP Nast, A$AP Ant, Chief Keef & Playboi Carti)</strong> by <a href='https://www.last.fm/music/A$AP+Mob/_/Blowin%27+Minds+(Skateboard)+(feat.+A$AP+Rocky,+A$AP+Nast,+A$AP+Ant,+Chief+Keef+&+Playboi+Carti)'>A$AP Mob</a> - 27 plays
                 <br />
                 <strong>6. anthems </strong> by <a href='https://www.last.fm/music/Charli+XCX/_/anthems'>Charli XCX</a> - 27 plays
                 <br />
@@ -80,7 +80,7 @@ export default function Lastfm() {
                 <br />
                 <strong>3 hours ago</strong> | Kanye West - <a href='https://www.last.fm/music/Kanye+West/_/H%E2%80%A2A%E2%80%A2M'>H•A•M</a>
                 <br />
-                <strong>3 hours ago</strong> | The Internet - <a href='https://www.last.fm/music/The+Internet/_/Matt%27s+Apartment'>Matt's Apartment</a>
+                <strong>3 hours ago</strong> | The Internet - <a href='https://www.last.fm/music/The+Internet/_/Matt%27s+Apartment'>Matt’s Apartment</a>
                 <br />
                 <strong>3 hours ago</strong> | Travis Scott - <a href='https://www.last.fm/music/Travis+Scott/_/sweet+sweet'>sweet sweet</a>
                 <br />

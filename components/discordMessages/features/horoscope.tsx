@@ -7,7 +7,7 @@ export default function Horoscope() {
             <DiscordMessage profile='banner' timestamp='08/15/2021'>?horo</DiscordMessage>
             <DiscordMessage profile='bentoBot' timestamp='08/15/2021'>
                 <DiscordEmbed slot='embeds' color="#C0C0C0" authorName='Banner' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/a_d38527440ed3d5cd3a8045862472ff99.gif?size=1024' embedTitle='Sagittarius horoscope for August 15, 2021'>
-                You think it's in the bag. They have something to add. At least you're not bored.
+                You think it is in the bag. They have something to add. At least you are not bored.
                     <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Date Range' inline inlineIndex={1}>Between Nov 23 - Dec 21</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Compatibility 😳' inline inlineIndex={2}>Virgo 😏</DiscordEmbedField>
@@ -21,7 +21,7 @@ export default function Horoscope() {
             <DiscordMessage profile='banner' timestamp='08/15/2021'>?horo <DiscordMention type='user'>Adam</DiscordMention></DiscordMessage>
             <DiscordMessage profile='bentoBot' timestamp='08/15/2021'>
                 <DiscordEmbed slot='embeds' color="#800080" authorName='Adam' authorImage='https://cdn.discordapp.com/avatars/223908083825377281/bca17fe842890a45c12dc58fb0b4be45.png?size=1024' embedTitle='Virgo horoscope for August 15, 2021'>
-                There's a way out. Light streams through. Gloom and doom are history.
+                There is a way out. Light streams through. Gloom and doom are history.
                     <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Date Range' inline inlineIndex={1}>Between Aug 23 - Sep 22</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Compatibility 😳' inline inlineIndex={2}>Aries 😏</DiscordEmbedField>

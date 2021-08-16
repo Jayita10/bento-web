@@ -13,7 +13,7 @@ export default function Bento() {
             ?bento
             </DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-            You didn't specify a user to give the daily <strong>Bento 🍱</strong> to!
+            You didn’t specify a user to give the daily <strong>Bento 🍱</strong> to!
             </DiscordMessage>
             <DiscordMessage profile='alonzo'>
             ?bento <DiscordMention type='user'>tzuwy</DiscordMention>

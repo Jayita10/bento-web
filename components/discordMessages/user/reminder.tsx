@@ -10,7 +10,7 @@ export default function Reminder() {
             </DiscordMessage>
         </DiscordMessages>
         <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
-            Where you receive this DM from Bento 🍱, if they're enabled.
+            Where you receive this DM from Bento 🍱, if they’re enabled.
         </p>
         <DiscordMessages>
             <DiscordMessage timestamp='08/16/2021' profile='bentoBot'>

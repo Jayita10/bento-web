@@ -47,6 +47,7 @@ export default function About() {
                     <a
                         href="https://www.typescriptlang.org/"
                         target="_blank"
+                        rel="noreferrer"
                         className='text-typescript hover:underline'
                     >
                         TypeScript
@@ -54,6 +55,7 @@ export default function About() {
                     <a
                         href="https://discord.js.org/#/"
                         target="_blank"
+                        rel="noreferrer"
                         className='text-discordBlue hover:underline'
                     >
                         Discord.js
@@ -61,6 +63,7 @@ export default function About() {
                     <a
                         href="https://discord.com/developers/docs/reference"
                         target="_blank"
+                        rel="noreferrer"
                         className='text-discordBlue hover:underline'
                     >
                         Discord API
@@ -78,6 +81,7 @@ export default function About() {
                     <a
                         href="https://nextjs.org/"
                         target="_blank"
+                        rel="noreferrer"
                         className="text-white hover:underline"
                     >
                         Next.js
@@ -95,6 +99,7 @@ export default function About() {
                     <a
                         href="https://github.com/thebentobot"
                         target="_blank"
+                        rel="noreferrer"
                         className="text-white hover:underline"
                     >
                         GitHub
@@ -110,6 +115,7 @@ export default function About() {
                     <a
                         href="https://discord.gg/dd68WwP"
                         target="_blank"
+                        rel="noreferrer"
                         className="text-yellow-400 hover:underline"
                     >
                         Bento 🍱 Support Server

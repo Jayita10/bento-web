@@ -5,7 +5,7 @@ export default function Notification() {
     return (
         <div>
         <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
-            You get notified by enabling your DM's for Bento 🍱
+            You get notified by enabling your DM’s for Bento 🍱
             <br />
             You start off by saving a <code>keyword</code>, where when people mention the word, you will receive a DM.
         </p>
@@ -65,7 +65,7 @@ export default function Notification() {
             </DiscordMessage>        
         </DiscordMessages>
         <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
-            At last, you can both save a keyword for global notifications by adding <strong>"--global"</strong> when saving your keyword,
+            At last, you can both save a keyword for global notifications by adding <strong>--global</strong> when saving your keyword,
             <br /> or use the global command below.
         </p>
         <DiscordMessages>
