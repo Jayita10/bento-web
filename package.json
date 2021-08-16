@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "^7.15.0",
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
     "@skyra/discord-components-core": "^2.7.1",
