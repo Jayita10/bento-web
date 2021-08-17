@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { Disclosure} from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { motion, Variants } from "framer-motion"
+import { motion, useReducedMotion, Variants } from "framer-motion"
 import Link from 'next/link'
 
 function classNames(...classes:any) {
@@ -33,6 +33,50 @@ const animationItem: Variants = {
 }
 
 export default function Example() {
+  const shouldReduceMotion = useReducedMotion()
+
+  const animation: Variants = shouldReduceMotion ? {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+        }
+    },
+  } : {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    },
+  }
+  
+  const animationItem: Variants = shouldReduceMotion ? {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      }
+    }
+  } : {
+    hidden: {
+      opacity: 0,
+      x: -50,
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+      }
+    }
+  }
+
     const { asPath } = useRouter();
     const navigation = [
         { name: 'About', href: '/about', current: asPath == '/about' ? true : false },

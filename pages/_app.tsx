@@ -4,6 +4,9 @@ import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Head from 'next/head'
+import { DefaultSeo } from 'next-seo'
+import SEO from '../next-seo.config'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -81,6 +84,53 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <div className="bg-gray-800 flex flex-col min-h-screen">
+      <Head>
+      <link rel="icon" href="/favicon.ico" />
+                        <meta content="Bento 🍱" property="og:title" />
+                        <meta
+                            content="A Discord bot with server moderation tools and various entertaining commands."
+                            property="og:description"
+                        />
+                        <meta
+                            content="../util/bentoLogo.png"
+                            property="og:image"
+                        />
+                        <link
+                            rel="apple-touch-icon"
+                            sizes="180x180"
+                            href="../public/apple-touch-icon-180x180.png"
+                        />
+                        <link
+                            rel="icon"
+                            type="image/png"
+                            sizes="32x32"
+                            href="../public/favicon-32x32.png"
+                        />
+                        <link rel="shortcut icon" href="/icons/favicon.ico" />
+                        <link rel="icon" type="image/png" sizes="192x192" href="../public/android-chrome-192x192.png" />
+                        <link
+                            rel="icon"
+                            type="image/png"
+                            sizes="16x16"
+                            href="../public/favicon-16x16.png"
+                        />
+                        <link rel="manifest" href="../public/site.webmanifest" />
+                        <link
+                            rel="mask-icon"
+                            href="../public/safari-pinned-tab.svg"
+                            color="#ffd903"
+                        />
+                        <meta
+                            name="msapplication-TileColor"
+                            content="#ffd903"
+                        />
+                        <meta name="theme-color" content="#ffd903" />
+                        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
+                        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+                        <meta httpEquiv="Page-Enter" content="RevealTrans(Duration=2.0,Transition=2)" />
+                        <meta httpEquiv="Page-Exit" content="RevealTrans(Duration=3.0,Transition=12)" />
+      </Head>
+      <DefaultSeo {...SEO}/>
       <div className="fixed bottom-3 bg-yellow-400 right-3  cursor-pointer z-50">
       {isVisible && (
         <motion.div

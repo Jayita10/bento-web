@@ -4,7 +4,8 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { getData as userDataFetch } from './api/stats/users'
 import { getData as serverDataFetch } from './api/stats/servers'
-import { motion, Variants } from "framer-motion"
+import { motion, Variants, useReducedMotion } from "framer-motion"
+import { NextSeo } from 'next-seo'
 
 const features = [
   {
@@ -22,7 +23,7 @@ const features = [
   {
     name: 'Amazing Extra Features',
     description:
-      'Have your TikTok links embedded, check the weather or time anywhere in the world, check your horoscope, look up at Tenor GIF, get an Urban Dictionary definition, compare LastFM statistics, set reminders or keyword notifications, and make your own custom tags to remember good memes or memories',
+      'Have your TikTok links embedded, check the weather or time anywhere in the world, check your horoscope, look up a Tenor GIF, get an Urban Dictionary definition, compare LastFM statistics, set reminders or keyword notifications, and make your own custom tags to remember good memes or memories',
     icon: FireIcon,
   },
   {
@@ -32,34 +33,6 @@ const features = [
     icon: CogIcon,
   },
 ];
-
-const animation: Variants = {
-  hidden: {
-    opacity: 0,
-    x: -50,
-  },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-    }
-  }
-}
-
-const bottomAnimation: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-    }
-  }
-}
 
 export interface Data {
   usersCount: number,
@@ -78,11 +51,72 @@ export const getServerSideProps: GetServerSideProps = async () => {
 }
 
 export default function Home({ usersCount, serversCount }: Data) {
+  const shouldReduceMotion = useReducedMotion()
+
+
+const animation: Variants = shouldReduceMotion ? {
+  hidden: {
+  opacity: 0,
+},
+show: {
+  opacity: 1,
+  transition: {
+    duration: 0.8,
+  }
+}} : {
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+    }
+  }
+}
+
+const bottomAnimation: Variants = shouldReduceMotion ? {
+  hidden: {
+  opacity: 0,
+},
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+    }
+  }
+} : {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+    }
+  }
+}
   return (
     <div>
       <Head>
         <title>Bento 🍱</title>
       </Head>
+      <NextSeo 
+				description={`Bento 🍱 - A Discord bot with server moderation tools and various entertaining commands.`}
+				openGraph={{
+					title: `Bento 🍱`
+				}}
+				additionalMetaTags={[
+					{
+						name: 'summary',
+						content:
+            `Bento 🍱 is a quality and well supported Discord Bot that constantly improves and always delivers when you need it the most`
+					}
+				]} />
     <div className="relative bg-gray-800 overflow-hidden">
     
       <div className="max-w-7xl mx-auto">
@@ -165,6 +199,8 @@ export default function Home({ usersCount, serversCount }: Data) {
         <motion.img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
           src="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024"
+          width={375}
+          height={375}
           alt=""
           initial='hidden' animate='show' variants={animation}
         />

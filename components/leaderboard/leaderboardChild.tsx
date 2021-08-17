@@ -41,7 +41,7 @@ export default function LeaderboardChild({userID, rank, level, xp, username, dis
     let controls = useAnimation()
     controls.start({width: `${percent}%`, transition: {duration: 3, ease: 'linear'}})
     return (
-      <motion.li whileHover={{scale: 1.1}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-full my-4 p-2 px-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow' style={{transform: 'none'}}>
+      <motion.li whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-full my-4 p-2 px-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow' style={{transform: 'none'}}>
         
         <div className='flex-shrink-0 w-72 truncate text-gray-700 text-left'>
           <div className='transition duration-300 ease-in-out inline-block bg-gray-800 px-2 py-1 rounded-md group-hover:bg-gray-900'>

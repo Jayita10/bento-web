@@ -2,9 +2,24 @@ import Head from "next/head";
 import BentoGreeting from "../components/discordMessages/bentoGreeting";
 import Prefix from "../components/discordMessages/admin/prefix";
 import Settings from "../components/discordMessages/admin/settings";
-import { motion, Variants } from "framer-motion"
+import { motion, useReducedMotion, Variants } from "framer-motion"
+import { NextSeo } from "next-seo";
 
-const animation: Variants = {
+
+export default function Setup() {
+  const shouldReduceMotion = useReducedMotion()
+
+const animation: Variants = shouldReduceMotion ? {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+    }
+  }
+} : {
   hidden: {
     opacity: 0,
     x: -50,
@@ -17,13 +32,23 @@ const animation: Variants = {
     }
   }
 }
-
-export default function Setup() {
     return (
       <div>
         <Head>
         <title>How to setup Bento 🍱</title>
       </Head>
+      <NextSeo 
+				description="How to setup Bento 🍱 - Check how easy it is to manage your Discord Server"
+				openGraph={{
+					title: "How to setup Bento 🍱"
+				}}
+				additionalMetaTags={[
+					{
+						name: 'summary',
+						content:
+							"How to setup Bento 🍱 - Check how easy it is to manage your Discord Server"
+					}
+				]} />
       <div className="py-12 bg-gray-800">
         <motion.div className="max-w-7xl mx-auto" initial='hidden' animate='show' variants={animation}>
           <div className="lg:text-center">

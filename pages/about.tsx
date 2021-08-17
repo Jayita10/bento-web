@@ -1,7 +1,21 @@
 import Head from "next/head";
-import { motion, Variants } from "framer-motion"
+import { motion, useReducedMotion, Variants } from "framer-motion"
+import { NextSeo } from 'next-seo';
 
-const animation: Variants = {
+export default function About() {
+  const shouldReduceMotion = useReducedMotion()
+
+const animation: Variants = shouldReduceMotion ? {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+    }
+  }
+} : {
   hidden: {
     opacity: 0,
     x: -50,
@@ -14,13 +28,23 @@ const animation: Variants = {
     }
   }
 }
-
-export default function About() {
     return (
       <div>
         <Head>
         <title>About Bento 🍱</title>
       </Head>
+      <NextSeo 
+				description="About Bento 🍱 - The best Discord bot available, and how it was created"
+				openGraph={{
+					title: "About Bento 🍱"
+				}}
+				additionalMetaTags={[
+					{
+						name: 'summary',
+						content:
+							"About Bento 🍱 - The best Discord bot available, and how it was created"
+					}
+				]} />
       <div className="py-12 bg-gray-800">
         <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation} whileHover={{scale: 1.05}}>
           <div className="lg:text-center">

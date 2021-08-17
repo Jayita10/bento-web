@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { commandsCategoryList, commandsList } from "../util/commandsJSONList";
-import { motion, Variants } from "framer-motion"
+import { motion, useReducedMotion, Variants } from "framer-motion"
 import Admin, { adminCommands } from "../components/commands/admin";
 import Features, { featureCommands } from "../components/commands/features";
 import Info, { infoCommands } from "../components/commands/info";
@@ -8,8 +8,30 @@ import Moderation, { moderationCommands } from "../components/commands/moderatio
 import User, { userCommands } from "../components/commands/user";
 import { useState } from "react";
 import { capitalize } from "../util/capitalize";
+import { NextSeo } from "next-seo";
 
-const animation: Variants = {
+export default function Commands() {
+  const [showModal, setShowModal] = useState(false);
+  const [showCommand, setCommand] = useState('');
+
+  function buttonFunction(category: string) {
+    setShowModal(true)
+    setCommand(category)
+  }
+
+  const shouldReduceMotion = useReducedMotion()
+
+const animation: Variants = shouldReduceMotion ? {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+    }
+  }
+} : {
   hidden: {
     opacity: 0,
     x: -50,
@@ -22,20 +44,23 @@ const animation: Variants = {
     }
   }
 }
-
-export default function Commands() {
-  const [showModal, setShowModal] = useState(false);
-  const [showCommand, setCommand] = useState('');
-
-  function buttonFunction(category: string) {
-    setShowModal(true)
-    setCommand(category)
-  }
     return (
       <div>
         <Head>
         <title>Bento 🍱 | Commands</title>
       </Head>
+      <NextSeo
+				description="Want to know what Bento 🍱 can do on your Discord Server? Get information about every Discord command available with Bento 🍱 on this page."
+				openGraph={{
+					title: "Bento 🍱 | Commands"
+				}}
+				additionalMetaTags={[
+					{
+						name: 'summary',
+						content:
+							"Want to know what Bento 🍱 can do on your Discord Server? Get information about every command available with Bento 🍱 on this page."
+					}
+				]} />
       <div className="py-12 bg-gray-800">
         <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation}>
           <div className="lg:text-center">

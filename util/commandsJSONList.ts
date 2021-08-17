@@ -409,9 +409,17 @@ export const commandsList: commandsInterface[] = [
           "🍱"
        ],
        "category":"user",
-       "description":"Give a Bento Box 🍱 to your friend every 24th hour :D.",
+       "description":"Give a Bento Box 🍱 to your friend every 12th hour :D.",
        "usage":"?bento [<user>]"
     },
+    {
+      "name":"web",
+      "aliases":[
+      ],
+      "category":"info",
+      "description":"Link to the Bento 🍱 website",
+      "usage":"?web"
+   },
     {
        "name":"notification",
        "aliases":[

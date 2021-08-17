@@ -60,7 +60,7 @@ export default function CommandChild ({key, name, aliases, category, description
         <p className='text-xl whitespace-pre-line text-gray-300 sm:text-xl text-center max-w-xl mx-auto'>
             {aliases.length ? `Aliases: ${aliases.map(alias => alias).join(', ')}` : null}
         </p>
-        <p className='text-xl whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
+        <p className=' leading-10 text-xl mt-1 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
             {description}
         </p>
         <br></br>

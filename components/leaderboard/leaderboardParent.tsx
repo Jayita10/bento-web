@@ -1,5 +1,5 @@
 import LeaderboardChild from "./leaderboardChild";
-import { motion, Variants } from "framer-motion"
+import { motion, useReducedMotion, Variants } from "framer-motion"
 
 interface LeaderboardParentRankingsInterface {
     rank: string,
@@ -15,32 +15,51 @@ interface userDataInterface {
     items: LeaderboardParentRankingsInterface[]
 }
 
-const animation: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.3,
-            delayChildren: 0.3
-        }
-    },
-}
-
-const animationItem: Variants = {
-    hidden: {
-      opacity: 0,
-      y: -50,
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      }
-    }
-}
-
 export default function LeaderboardParent({items}: userDataInterface) {
+    const shouldReduceMotion = useReducedMotion()
+
+    const animation: Variants = shouldReduceMotion ? {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                duration: 0.5,
+            }
+        },
+    } : {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3,
+                delayChildren: 0.3
+            }
+        },
+    }
+    
+    const animationItem: Variants = shouldReduceMotion ? {
+        hidden: {
+            opacity: 0,
+          },
+          show: {
+            opacity: 1,
+            transition: {
+              duration: 0.5,
+            }
+          }
+    } : {
+        hidden: {
+          opacity: 0,
+          y: -50,
+        },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.5,
+          }
+        }
+    }
     return (
         <motion.ul className='relative' initial="hidden"
         animate="show"
