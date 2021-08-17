@@ -92,7 +92,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                             property="og:description"
                         />
                         <meta
-                            content="../util/bentoLogo.png"
+                            content="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024"
                             property="og:image"
                         />
                         <link
