@@ -93,7 +93,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                         />
                         <meta
                             content="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024"
-                            property="og:image"
+                            property="og:image:secure"
                         />
                         <link
                             rel="apple-touch-icon"
