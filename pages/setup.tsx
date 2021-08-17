@@ -60,7 +60,7 @@ const animation: Variants = shouldReduceMotion ? {
             </p>
           </div>
           <br></br>
-          <motion.div className='container mx-auto px-1200 shadow' whileHover={{scale: 1.05}}>
+          <motion.div className='container mx-auto px-1200 shadow' whileHover={{scale: 1.025}}>
             <BentoGreeting />
           </motion.div>
           <div className="lg:text-center">
@@ -69,7 +69,7 @@ const animation: Variants = shouldReduceMotion ? {
             </p>
           </div>
           <br></br>
-          <motion.div className='container mx-auto px-1200 shadow' whileHover={{scale: 1.05}}>
+          <motion.div className='container mx-auto px-1200 shadow' whileHover={{scale: 1.025}}>
             <Prefix />
             </motion.div>
           <div className="lg:text-center">
@@ -78,7 +78,7 @@ const animation: Variants = shouldReduceMotion ? {
             </p>
           </div>
           <br></br>
-          <motion.div className='container mx-auto px-1200 shadow' whileHover={{scale: 1.05}}>
+          <motion.div className='container mx-auto px-1200 shadow' whileHover={{scale: 1.025}}>
             <Settings />
             </motion.div>
           <div className="lg:text-center">
@@ -91,7 +91,7 @@ const animation: Variants = shouldReduceMotion ? {
                   <motion.a
                     href="/commands#admin"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-300 hover:text-black md:py-4 md:text-lg md:px-10"
-                    whileHover={{ scale: 1.2 }}
+                    whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                   >
                     Admin Commands
@@ -112,7 +112,7 @@ const animation: Variants = shouldReduceMotion ? {
                   <motion.a
                     href="https://discord.gg/dd68WwP"
                     className="w-full flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-300 hover:text-black md:py-4 md:text-lg md:px-10 px-4 sm:px-6 lg:px-8"
-                    whileHover={{ scale: 1.2 }}
+                    whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                   >
                     Join the Bento Support Server on Discord

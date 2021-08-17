@@ -46,7 +46,7 @@ const animation: Variants = shouldReduceMotion ? {
 					}
 				]} />
       <div className="py-12 bg-gray-800">
-        <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation} whileHover={{scale: 1.05}}>
+        <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation} whileHover={{scale: 1.025}}>
           <div className="lg:text-center">
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center">
               About Bento 🍱
@@ -62,7 +62,7 @@ const animation: Variants = shouldReduceMotion ? {
       </div>
       <div className="py-12 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="lg:text-center" initial='hidden' animate='show' variants={animation} whileHover={{scale: 1.05}}>
+          <motion.div className="lg:text-center" initial='hidden' animate='show' variants={animation} whileHover={{scale: 1.025}}>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center">
               What powers Bento 🍱?
             </p>

@@ -208,7 +208,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
     </div>
     <div className="py-12 bg-gray-900">
       <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={bottomAnimation}>
-        <motion.div className="lg:text-center" whileHover={{scale: 1.10}}>
+        <motion.div className="lg:text-center" whileHover={{scale: 1.05}}>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center">
             The bot you did not know you needed
           </p>
@@ -220,7 +220,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
             {features.map((feature) => (
-              <motion.div key={feature.name} className="relative bg-gray-800 px-6 py-6 rounded shadow-lg" whileHover={{scale: 1.1}} initial='hidden' animate='show' variants={animation}>
+              <motion.div key={feature.name} className="relative bg-gray-800 px-6 py-6 rounded shadow-lg" whileHover={{scale: 1.05}} initial='hidden' animate='show' variants={animation}>
                 <dt>
                   <motion.div whileHover={{rotate: 360, transition: {type: 'spring', duration: 1.5, bounce: 0.25} }} className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-300 text-white">
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
@@ -243,7 +243,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
                   <motion.a
                     href="/commands"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10"
-                    whileHover={{ scale: 1.2 }}
+                    whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                   >
                     A list of All Commands

@@ -87,14 +87,19 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
       <link rel="icon" href="/favicon.ico" />
                         <meta content="Bento 🍱" property="og:title" />
+                        <meta property="og:type" content="website" />
+                        <meta property="og:url" content="https://www.bentobot.xyz/" />
                         <meta
                             content="A Discord bot with server moderation tools and various entertaining commands."
                             property="og:description"
                         />
-                        <meta
-                            content="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024"
-                            property="og:image:secure"
-                        />
+                        <meta property="og:image" content="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024" />
+                        <meta property="og:image:secure_url" content="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024" />
+                        <meta property="og:image:type" content="image/png" />
+                        <meta property="og:image:width" content="375" />
+                        <meta property="og:image:height" content="375" />
+                        <meta name="twitter:card" content="summary_large_image"/>
+
                         <link
                             rel="apple-touch-icon"
                             sizes="180x180"
