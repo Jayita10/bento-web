@@ -1,4 +1,3 @@
-import { motion } from "framer-motion"
 import React from "react"
 import { capitalize } from "../../util/capitalize"
 import AutoRole from "../discordMessages/admin/autoRole"
@@ -46,9 +45,9 @@ interface commandsInterface {
     usage: string
 }
 
-export default function CommandChild ({key, name, aliases, category, description, usage}: commandsInterface) {
+export default function CommandChild ({ name, aliases, category, description, usage}: commandsInterface) {
     return (
-        <motion.li  className='transition duration-300 ease-in-out bg-gray-800 items-center w-full my-4 px-0 lg:px-6 py-0 lg:py-6 p-4 rounded-lg group hover:bg-gray-700 shadow overflow-auto' style={{transform: 'none'}}>
+        <li className='transition duration-300 ease-in-out bg-gray-800 items-center w-full my-4 px-0 lg:px-6 py-0 lg:py-6 p-4 rounded-lg group hover:bg-gray-700 shadow overflow-auto'>
         <h1 id={name} className='text-2xl font-extrabold text-yellow-400 sm:text-xl text-center'>
             <a
               href={`#${name}`}
@@ -433,6 +432,6 @@ export default function CommandChild ({key, name, aliases, category, description
             </div>
         </div>
         }
-        </motion.li>
+        </li>
     )
 }

@@ -18,9 +18,12 @@ export default function Help() {
                     If it does not show up either, it may not be included in the OpenWeather API.
                     <br />
                     <strong>Usage: </strong> ?weather [save] {`<city>`}, [country code]
+                    <br />
+                    <strong>Website: </strong> <a href='https://www.bentobot.xyz/commands#weather'>https://www.bentobot.xyz/commands#weather</a>
                     <span slot="footer">{`<>`} = REQUIRED | [] = OPTIONAL  </span>
                 </DiscordEmbed>
             </DiscordMessage>
         </DiscordMessages>
     )
 }
+//https://www.bentobot.xyz/commands#weather

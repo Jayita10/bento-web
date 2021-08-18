@@ -1,4 +1,3 @@
-import { motion, Variants } from "framer-motion"
 import CommandChild from "./commandChild"
 
 interface commandsInterface {
@@ -16,9 +15,9 @@ interface commandsListInterface {
 export default function CommandsParent ({items}: commandsListInterface) {
     let i = 0
     return (
-        <motion.ul className='relative' >
+        <ul className='relative' >
             {items.map((command, i) => (
-                <motion.div key={i} className='shadow-lg'>
+                <div key={i} className='shadow-lg'>
                 <CommandChild 
                 key={i} 
                 name={command.name}
@@ -27,8 +26,8 @@ export default function CommandsParent ({items}: commandsListInterface) {
                 description={command.description}
                 usage={command.usage}
                 />
-                </motion.div>
+                </div>
         ))}
-        </motion.ul>
+        </ul>
     )
 }

@@ -34,11 +34,9 @@ const animation: Variants = shouldReduceMotion ? {
 } : {
   hidden: {
     opacity: 0,
-    x: -50,
   },
   show: {
     opacity: 1,
-    x: 0,
     transition: {
       duration: 0.8,
     }
@@ -140,7 +138,6 @@ const animation: Variants = shouldReduceMotion ? {
                 </div>
                 {/*body*/}
                 <div className="relative p-1 flex-auto">
-                  <p className=" text-yellow-400 text-sm leading-relaxed">
                   {showCommand !== 'Admin' ? null : 
                   <div>
                       {adminCommands.map((command, i) => (
@@ -226,7 +223,6 @@ const animation: Variants = shouldReduceMotion ? {
                       ))}
                   </div>
                   }
-                  </p>
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-2 border-t border-solid border-gray-400 rounded-b">
@@ -247,7 +243,7 @@ const animation: Variants = shouldReduceMotion ? {
           </motion.div>         
         </motion.div>
         <br />
-        <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 id='admin' className="mt-2 text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow-400 sm:text-4xl">
               <a
@@ -259,12 +255,12 @@ const animation: Variants = shouldReduceMotion ? {
             </h2>
           </div>
           <br></br>
-          <motion.div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
+          <div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
             <Admin />
-          </motion.div>         
-        </motion.div>
+          </div>         
+        </div>
         <br />
-        <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 id='features' className="mt-2 text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow-400 sm:text-4xl">
               <a
@@ -276,12 +272,12 @@ const animation: Variants = shouldReduceMotion ? {
             </h2>
           </div>
           <br></br>
-          <motion.div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
+          <div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
             <Features />
-          </motion.div>         
-        </motion.div>
+          </div>         
+        </div>
         <br />
-        <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 id='info' className="mt-2 text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow-400 sm:text-4xl">
               <a
@@ -293,12 +289,12 @@ const animation: Variants = shouldReduceMotion ? {
             </h2>
           </div>
           <br></br>
-          <motion.div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
+          <div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
             <Info />
-          </motion.div>         
-        </motion.div>
+          </div>         
+        </div>
         <br />
-        <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 id='moderation' className="mt-2 text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow-400 sm:text-4xl">
               <a
@@ -310,10 +306,10 @@ const animation: Variants = shouldReduceMotion ? {
             </h2>
           </div>
           <br></br>
-          <motion.div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
+          <div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
             <Moderation />
-          </motion.div>         
-        </motion.div>
+          </div>         
+        </div>
         <br />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
@@ -327,9 +323,9 @@ const animation: Variants = shouldReduceMotion ? {
             </h2>
           </div>
           <br></br>
-          <motion.div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
+          <div className='bg-gray-900 px-0 lg:px-6 py-0 lg:py-2 rounded shadow-2xl'>
             <User />
-          </motion.div>         
+          </div>         
         </div>
       </div>
       </div>     

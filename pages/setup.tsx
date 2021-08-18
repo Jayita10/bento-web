@@ -22,11 +22,9 @@ const animation: Variants = shouldReduceMotion ? {
 } : {
   hidden: {
     opacity: 0,
-    x: -50,
   },
   show: {
     opacity: 1,
-    x: 0,
     transition: {
       duration: 0.8,
     }
@@ -90,7 +88,7 @@ const animation: Variants = shouldReduceMotion ? {
           <div className="rounded-md shadow px-4 sm:px-6 lg:px-8">
                   <motion.a
                     href="/commands#admin"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-300 hover:text-black md:py-4 md:text-lg md:px-10"
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10"
                     whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                   >
@@ -100,7 +98,7 @@ const animation: Variants = shouldReduceMotion ? {
           </div>
         </motion.div>
       </div>
-      <div className="py-12 bg-gray-900">
+      <motion.div className="py-12 bg-gray-900" initial='hidden' animate='show' variants={animation}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl text-center sm:mx-auto sm:max-w-xl px-4 sm:px-6 lg:px-8">
@@ -111,7 +109,7 @@ const animation: Variants = shouldReduceMotion ? {
             <div className="rounded-md shadow">
                   <motion.a
                     href="https://discord.gg/dd68WwP"
-                    className="w-full flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-300 hover:text-black md:py-4 md:text-lg md:px-10 px-4 sm:px-6 lg:px-8"
+                    className="w-full flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10 px-4 sm:px-6 lg:px-8"
                     whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                   >
@@ -121,7 +119,7 @@ const animation: Variants = shouldReduceMotion ? {
               </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       </div>
       
     );

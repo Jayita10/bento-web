@@ -1,5 +1,4 @@
 import { motion, useAnimation } from "framer-motion"
-import Image from 'next/image'
 
 interface LeaderboardChildRankingsInterface {
     rank: string,
@@ -41,7 +40,7 @@ export default function LeaderboardChild({userID, rank, level, xp, username, dis
     let controls = useAnimation()
     controls.start({width: `${percent}%`, transition: {duration: 3, ease: 'linear'}})
     return (
-      <motion.li whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-full my-4 p-2 px-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow' style={{transform: 'none'}}>
+      <motion.li whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-full my-4 p-2 px-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow'>
         
         <div className='flex-shrink-0 w-72 truncate text-gray-700 text-left'>
           <div className='transition duration-300 ease-in-out inline-block bg-gray-800 px-2 py-1 rounded-md group-hover:bg-gray-900'>
@@ -62,9 +61,9 @@ export default function LeaderboardChild({userID, rank, level, xp, username, dis
         </div>
         
         <div className='flex-grow p-4 w-full md:w-auto'>
-          <motion.div className='transition duration-1000 ease-in-out text-white text-left opacity-0 group-hover:opacity-100'>
+          <div className='transition duration-1000 ease-in-out text-white text-left opacity-0 group-hover:opacity-100'>
             {Math.round(((level * level * 100) - xp) / 23)} messages to level {level + 1}
-          </motion.div>
+          </div>
           <div className='transition duration-300 ease-in-out mt-1 mb-1 w-full h-1 bg-gray-700 group-hover:bg-gray-500 rounded'>
             <motion.div animate={controls} className='transition duration-1000 ease-in-out rounded h-full bg-gradient-to-r from-red-500 via-yellow-500 to-yellow-300 opacity-75 hover:opacity-100' style={{width: '0%'}}></motion.div>
           </div>

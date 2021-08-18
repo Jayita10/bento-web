@@ -1,6 +1,6 @@
 import { Popover } from '@headlessui/react'
 import { CogIcon, ChatIcon, FireIcon, UsersIcon, ArrowSmUpIcon } from '@heroicons/react/outline'
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { getData as userDataFetch } from './api/stats/users'
 import { getData as serverDataFetch } from './api/stats/servers'
@@ -38,7 +38,7 @@ export interface Data {
   usersCount: number,
   serversCount: number
 }
-
+/*
 export const getServerSideProps: GetServerSideProps = async () => {
   const resUsers = await userDataFetch()
   const resServers = await serverDataFetch()
@@ -47,6 +47,18 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       usersCount: resUsers.count, serversCount: resServers.count
     },
+  }
+}
+*/
+
+export const getStaticProps: GetStaticProps = async () => {
+  const resUsers = await userDataFetch()
+  const resServers = await serverDataFetch()
+
+  return {
+    props: {
+      usersCount: resUsers.count, serversCount: resServers.count
+    }, revalidate: 60
   }
 }
 
@@ -66,11 +78,9 @@ show: {
 }} : {
   hidden: {
     opacity: 0,
-    x: -50,
   },
   show: {
     opacity: 1,
-    x: 0,
     transition: {
       duration: 0.8,
     }
@@ -90,11 +100,9 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
 } : {
   hidden: {
     opacity: 0,
-    y: 50,
   },
   show: {
     opacity: 1,
-    y: 0,
     transition: {
       duration: 0.8,
     }

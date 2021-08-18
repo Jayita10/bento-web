@@ -8,30 +8,6 @@ function classNames(...classes:any) {
   return classes.filter(Boolean).join(' ');
 };
 
-const animation: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-      opacity: 1,
-      transition: {
-          staggerChildren: 0.1
-      }
-  },
-}
-
-const animationItem: Variants = {
-  hidden: {
-    opacity: 0,
-    x: -50,
-  },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.5,
-    }
-  }
-}
-
 export default function Example() {
   const shouldReduceMotion = useReducedMotion()
 
@@ -40,7 +16,7 @@ export default function Example() {
     show: {
         opacity: 1,
         transition: {
-          duration: 0.5,
+          duration: 0.3,
         }
     },
   } : {
@@ -60,19 +36,16 @@ export default function Example() {
     show: {
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.3,
       }
     }
   } : {
     hidden: {
       opacity: 0,
-      x: -50,
     },
     show: {
-      opacity: 1,
-      x: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.3,
       }
     }
   }
@@ -92,7 +65,7 @@ export default function Example() {
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-black hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-black hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -104,7 +77,7 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                 <Link href="/" passHref>
-                    <motion.p className="text-yellow-400 cursor-pointer hover:bg-yellow-400 hover:text-black hover:animate-pulse px-3 py-2 rounded-md text-sm font-medium" whileHover={{ scale: 1.1 }}
+                    <motion.p className="text-yellow-300 cursor-pointer hover:bg-yellow-300 hover:text-black hover:animate-pulse px-3 py-2 rounded-md text-sm font-medium" whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.9 }}>🍱 Bento</motion.p>
                 </Link>
                 </div>
@@ -115,7 +88,7 @@ export default function Example() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-yellow-400 text-black' : 'text-gray-300 hover:bg-yellow-400 hover:text-black',
+                          item.current ? 'bg-yellow-300 text-black' : 'text-gray-300 hover:bg-yellow-300 hover:text-black',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -138,7 +111,7 @@ export default function Example() {
                   key={item.name}
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-yellow-400 text-black' : 'text-gray-300 hover:bg-yellow-400 hover:text-black',
+                    item.current ? 'bg-yellow-300 text-black' : 'text-gray-300 hover:bg-yellow-300 hover:text-black',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}

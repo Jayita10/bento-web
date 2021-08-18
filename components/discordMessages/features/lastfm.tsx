@@ -66,12 +66,12 @@ export default function Lastfm() {
                 <strong>10. Take My Heart Away</strong> by <a href='https://www.last.fm/music/Danny+L+Harle/_/Take+My+Heart+Away'>Danny L Harle</a> - 23 plays
                 <br />
                 <span slot="footer">Time period - 1month | Powered by last.fm  </span>
+                </DiscordEmbed>
                 <DiscordReactions slot="reactions">
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/282/left-arrow_2b05-fe0f.png"></DiscordReaction>
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/282/right-arrow_27a1-fe0f.png"></DiscordReaction>
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                 </DiscordReactions>
-                </DiscordEmbed>
             </DiscordMessage>
             <DiscordMessage profile='fiji'>?fm recent <DiscordMention type='user'>Banner</DiscordMention></DiscordMessage>
             <DiscordMessage profile='bentoBot'>
@@ -97,12 +97,12 @@ export default function Lastfm() {
                 <strong>3 hours ago</strong> | Bladee - <a href='https://www.last.fm/music/Bladee/_/I+Want+It+That+Way'>I Want It That Way</a>
                 <br />
                 <span slot="footer">Powered by last.fm  </span>
+                </DiscordEmbed>
                 <DiscordReactions slot="reactions">
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/282/left-arrow_2b05-fe0f.png"></DiscordReaction>
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/282/right-arrow_27a1-fe0f.png"></DiscordReaction>
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                 </DiscordReactions>
-                </DiscordEmbed>
             </DiscordMessage>
             <DiscordMessage profile='banner'>?fm wkt</DiscordMessage>
             <DiscordMessage profile='bentoBot'>

@@ -1,10 +1,12 @@
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import LeaderboardParent from "../../components/leaderboard/leaderboardParent";
 import { getData as getUsersData} from "../api/leaderboard";
 import { getData as getGuildData } from "../api/guild";
 import { motion, Variants } from "framer-motion"
 import { NextSeo } from "next-seo";
+import { getData } from "../api/guilds";
+import { useRouter } from "next/router";
 
 const animation: Variants = {
   hidden: { opacity: 0 },
@@ -38,6 +40,7 @@ interface userRankingsInterface {
   guild: guildInterface
 }
 
+/*
 export const getServerSideProps: GetServerSideProps = async ({query}) => {
   const guildID = query.id
   const resUsers = await getUsersData(guildID as string)
@@ -49,8 +52,53 @@ export const getServerSideProps: GetServerSideProps = async ({query}) => {
     },
   }
 }
+*/
+
+export const getStaticPaths: GetStaticPaths<{id: string}> = async () => {
+  const guilds = await getData()
+  //console.log(guilds)
+
+  const paths = guilds.map((guild) => ({
+    params: { id: `${guild.guildID}`}
+  }))
+  // when the servers scale, it needs to only fetch the top x amount of servers in build time, rest will be made by ISR
+  // https://vercel.com/docs/next.js/incremental-static-regeneration
+  // https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration
+  //console.log(paths)
+
+  return { paths, fallback: 'blocking'}
+}
+
+export const getStaticProps: GetStaticProps = async (context: any) => {
+  //const { guild } = params.id
+  //console.log(guild)
+  const resUsers = await getUsersData(context.params.id as string)
+  const resServer = await getGuildData(context.params.id as string)
+
+  return {
+    props: {
+      users: resUsers, guild: resServer
+    }, revalidate: 60
+  }
+}
 
 export default function Leaderboard({users, guild}: userRankingsInterface) {
+    const {isFallback} = useRouter()
+
+    if (isFallback) {
+      return (<div className="py-12 bg-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <button type="button" className="bg-yellow-400 ..." disabled>
+  <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+
+  </svg>
+  Processing Leaderboard for the first time
+</button>
+        </div>
+      </div>
+    )
+    }
+
     return (
       <div>
         <Head>

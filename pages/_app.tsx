@@ -136,11 +136,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                         <meta httpEquiv="Page-Exit" content="RevealTrans(Duration=3.0,Transition=12)" />
       </Head>
       <DefaultSeo {...SEO}/>
-      <div className="fixed bottom-3 bg-yellow-400 right-3  cursor-pointer z-50">
+      <div className="fixed bottom-3 bg-yellow-300 right-3  cursor-pointer z-50">
       {isVisible && (
         <motion.div
           onClick={scrollToTop}
-          className="fixed p-2 rounded-lg bg-yellow-400 bottom-3 right-3 lg:bottom-5 lg:right-5 cursor-pointer"
+          className="fixed p-2 rounded-lg bg-yellow-300 bottom-3 right-3 lg:bottom-5 lg:right-5 cursor-pointer"
           whileHover={{ scale: 1.3 }}
                         whileTap={{ scale: 0.9 }}
         >
@@ -150,6 +150,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </motion.div>
       )}
     </div>
+    <html lang="en"/>
       <Navigation />
       <Component {...pageProps} />
       <Footer />

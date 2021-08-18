@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 import LeaderboardParent from "../components/leaderboard/leaderboardParent";
 import { getData } from "./api/globalLeaderboard";
@@ -28,7 +28,7 @@ interface LeaderboardRankingsInterface {
 interface userRankingsInterface {
   users: LeaderboardRankingsInterface[]
 }
-
+/*
 export const getServerSideProps: GetServerSideProps = async () => {
   const resUsers = await getData()
 
@@ -38,7 +38,17 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   }
 }
+*/
 
+export const getStaticProps: GetStaticProps = async () => {
+  const resUsers = await getData()
+
+  return {
+    props: {
+      users: resUsers
+    }, revalidate: 60
+  }
+}
 export default function Leaderboard({users}: userRankingsInterface) {
     return (
       <div>
@@ -66,9 +76,9 @@ export default function Leaderboard({users}: userRankingsInterface) {
               Leaderboard for Bento 🍱
             </motion.p>
             <br></br>
-            <motion.div className='max-w-screen-2xl mx-auto px-3 pt-2'>
+            <div className='max-w-screen-2xl mx-auto px-3 pt-2'>
               <LeaderboardParent items={users}/>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
