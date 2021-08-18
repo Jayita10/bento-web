@@ -69,7 +69,7 @@ export default function Leaderboard({users}: userRankingsInterface) {
 				]} />
       <div className="py-12 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-          <div className="lg:text-center text-center overflow-visible">
+          <div className="lg:text-center text-center overflow-hidden">
             <motion.p initial="hidden"
         animate="show"
         variants={animation} className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center">

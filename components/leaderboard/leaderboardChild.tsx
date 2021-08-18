@@ -38,7 +38,7 @@ export default function LeaderboardChild({userID, rank, level, xp, username, dis
     const percent = (xp / (level * level * 100)) * 100
 
     let controls = useAnimation()
-    controls.start({width: `${percent}%`, transition: {duration: 3, ease: 'linear'}})
+    controls.start({width: `${percent}%`, transition: {duration: 3, ease: 'easeIn'}})
     return (
       <motion.li whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-full my-4 p-2 px-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow'>
         
@@ -64,8 +64,8 @@ export default function LeaderboardChild({userID, rank, level, xp, username, dis
           <div className='transition duration-1000 ease-in-out text-white text-left opacity-0 group-hover:opacity-100'>
             {Math.round(((level * level * 100) - xp) / 23)} messages to level {level + 1}
           </div>
-          <div className='transition duration-300 ease-in-out mt-1 mb-1 w-full h-1 bg-gray-700 group-hover:bg-gray-500 rounded'>
-            <motion.div animate={controls} className='transition duration-1000 ease-in-out rounded h-full bg-gradient-to-r from-red-500 via-yellow-500 to-yellow-300 opacity-75 hover:opacity-100' style={{width: '0%'}}></motion.div>
+          <div className='transition duration-300 ease-in-out mt-1 mb-1 w-full h-1 bg-gray-700 group-hover:bg-gray-500 rounded overflow-hidden'>
+            <motion.div animate={controls} className='transition duration-1000 ease-in-out rounded h-full bg-gradient-to-r from-red-500 via-yellow-500 to-yellow-300 opacity-75 hover:opacity-100 overflow-hidden' style={{width: '0%'}}></motion.div>
           </div>
         </div>
         

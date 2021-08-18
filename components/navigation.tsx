@@ -44,6 +44,7 @@ export default function Example() {
       opacity: 0,
     },
     show: {
+      opacity: 1,
       transition: {
         duration: 0.3,
       }
@@ -94,6 +95,7 @@ export default function Example() {
                         aria-current={item.current ? 'page' : undefined}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.9 }}
+                        variants={animationItem}
                       >
                         {item.name}
                       </motion.a>
