@@ -1,6 +1,7 @@
 {
     "name": "Bento",
     "short_name": "Bento",
+    "start_url": "/",
     "icons": [
         {
             "src": "/android-chrome-36x36.png",

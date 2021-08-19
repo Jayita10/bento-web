@@ -58,7 +58,8 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       usersCount: resUsers.count, serversCount: resServers.count
-    }, revalidate: 60*60*6
+    }, revalidate: 60*10
+    // 60*60*6 = 6 hours
      // revalidate isn't supported by netlify yet
     // https://github.com/netlify/netlify-plugin-nextjs/issues/151
   }
