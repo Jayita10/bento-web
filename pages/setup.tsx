@@ -1,10 +1,11 @@
 import Head from "next/head";
 import BentoGreeting from "../components/discordMessages/bentoGreeting";
 import Prefix from "../components/discordMessages/admin/prefix";
-import Settings from "../components/discordMessages/admin/settings";
 import { motion, useReducedMotion, Variants } from "framer-motion"
 import { NextSeo } from "next-seo";
+import dynamic from 'next/dynamic';
 
+const Settings = dynamic(() => import("../components/discordMessages/admin/settings"))
 
 export default function Setup() {
   const shouldReduceMotion = useReducedMotion()
@@ -77,8 +78,8 @@ const animation: Variants = shouldReduceMotion ? {
           </div>
           <br></br>
           <motion.div className='container mx-auto px-1200 shadow' whileHover={{scale: 1.025}}>
-            <Settings />
-            </motion.div>
+           <Settings />
+          </motion.div>
           <div className="lg:text-center">
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center sm:mx-auto px-4 sm:px-6 lg:px-8">
               Do you want to disable TikTok or set a welcome message? <br></br>Find out how by clicking below!

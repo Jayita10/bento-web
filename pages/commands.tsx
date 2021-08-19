@@ -1,14 +1,21 @@
 import Head from "next/head";
 import { commandsCategoryList, commandsList } from "../util/commandsJSONList";
 import { motion, useReducedMotion, Variants } from "framer-motion"
-import Admin, { adminCommands } from "../components/commands/admin";
-import Features, { featureCommands } from "../components/commands/features";
-import Info, { infoCommands } from "../components/commands/info";
-import Moderation, { moderationCommands } from "../components/commands/moderation";
-import User, { userCommands } from "../components/commands/user";
+import { adminCommands } from "../components/commands/admin";
+import { featureCommands } from "../components/commands/features";
+import { infoCommands } from "../components/commands/info";
+import { moderationCommands } from "../components/commands/moderation";
+import { userCommands } from "../components/commands/user";
 import { useState } from "react";
 import { capitalize } from "../util/capitalize";
 import { NextSeo } from "next-seo";
+import dynamic from 'next/dynamic';
+
+const Admin = dynamic(() => import("../components/commands/admin"))
+const Features = dynamic(() => import("../components/commands/features"))
+const Info = dynamic(() => import("../components/commands/info"))
+const Moderation = dynamic(() => import("../components/commands/moderation"))
+const User = dynamic(() => import("../components/commands/user"))
 
 export default function Commands() {
   const [showModal, setShowModal] = useState(false);
