@@ -21,7 +21,7 @@ const Progress = ({done}: any) => {
 		}
 		
 		setStyle(newStyle);
-	}, 200);
+	}, 500);
 	
 	return (
 		<div className='transition duration-300 ease-in-out mt-1 mb-1 w-full h-1 bg-gray-700 group-hover:bg-gray-500 rounded overflow-hidden'>

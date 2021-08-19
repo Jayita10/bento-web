@@ -78,7 +78,7 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
   return {
     props: {
       users: resUsers, guild: resServer
-    }, revalidate: 60
+    }, revalidate: 60*60*6
      // revalidate isn't supported by netlify yet
     // https://github.com/netlify/netlify-plugin-nextjs/issues/151
   }
