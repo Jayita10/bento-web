@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Invite the Discord bot Bento 🍱 to your own server here!](https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=261926943991&scope=bot%20applications.commands)
+
+# Website for Bento 🍱
+
+This website is for [Bento 🍱](https://github.com/thebentobot/bentoTS) a Discord bot with server moderation tools and various entertaining commands.
+
+The Bento 🍱 website is written in TypeScript and powered by the [React](https://reactjs.org/) Framework [Next.js](https://nextjs.org/), with CSS from [tailwindcss](https://tailwindcss.com/).
+
+## List of website features
+
+- [Front page with statistics and information
+](https://bentobot.xyz/)
+- [About page that explains the background for the Discord bot and what technologies are used](https://bentobot.xyz/about)
+
+- [Setup page that shows what happens when the bot joins a server and what to do](https://bentobot.xyz/setup)
+
+- [Commands page that shows a list of all Bento commands, some with practical examples.](https://bentobot.xyz/commands)
+
+- [Leaderboard page that shows the global leaderboard for Bento](https://bentobot.xyz/leaderboard)
+
+- [Dynamic route for the leaderboard page, that shows the leaderboard for a server.](https://bentobot.xyz/leaderboard/714496317522444352)
 
 ## Getting Started
 
-First, run the development server:
+### Dependencies
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+* A [PostgreSQL](https://www.postgresql.org/) Database, or any database where you can store total user count, total server count, and global leaderboard data (perhaps per server too if you want to support dynamic routing).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installing the database side of Bento 🍱
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+* Either locally run/install [PostgreSQL](https://www.postgresql.org/) or get a PostgreSQL database elsewhere. Other SQL databases may be possible considering Bento uses [Sequelize](https://sequelize.org/), but it is not tested and isn't recommended because the code may use PostgreSQL specific features, and it requires additional changes to the code. May be possible to use NoSQL with refactoring of code.
+* The creation of the database tabels. An SQL schema file will be provided in the future, but it is possible to recreate the tables by looking through the [Sequelize-auto](https://github.com/sequelize/sequelize-auto) generated models [here](https://github.com/thebentobot/bento-web/tree/master/database/models)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+### Installing Bento 🍱 web
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* ```git clone https://github.com/thebentobot/bento-web.git``` or download ZIP.
+* ```npm install``` assuming you have installed [node.js](https://nodejs.org/en/)
+* Create a [dotenv](https://www.npmjs.com/package/dotenv) file with the environment variables: ```DBdatabase=[NAME OF YOUR DATABASE]```, ```DBusername=[NAME OF YOUR DATABASE user]```, ```DBpassword=[PASSWORD FOR YOUR DATABASE USER]``` and ```host=[IP FOR YOUR DATABASE]```
 
-## Learn More
+### Executing Bento 🍱 with Docker
 
-To learn more about Next.js, take a look at the following resources:
+* ```npm run build```
+* ```npm start```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This website is mainly developed by [Christian](https://github.com/banner4422).
 
-## Deploy on Vercel
+Pull requests are very welcome if the features/changes makes sense and are up to par in quality.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the [AGPL-3.0 License](https://github.com/thebentobot/bento-web/blob/1.0/LICENSE)
+
+The avatar illustration is done by [Freepik](http://www.freepik.com).
