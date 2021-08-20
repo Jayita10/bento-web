@@ -4,7 +4,7 @@
 
 This website is for [Bento 🍱](https://github.com/thebentobot/bentoTS) a Discord bot with server moderation tools and various entertaining commands.
 
-The Bento 🍱 website is written in TypeScript and powered by the [React](https://reactjs.org/) Framework [Next.js](https://nextjs.org/), with CSS from [tailwindcss](https://tailwindcss.com/).
+The Bento 🍱 website is written in TypeScript and powered by the [React](https://reactjs.org/) Framework [Next.js](https://nextjs.org/), with CSS from [tailwindcss](https://tailwindcss.com/), and a [PostgreSQL](https://www.postgresql.org/) database.
 
 ## List of website features
 
@@ -37,7 +37,7 @@ The Bento 🍱 website is written in TypeScript and powered by the [React](https
 * ```npm install``` assuming you have installed [node.js](https://nodejs.org/en/)
 * Create a [dotenv](https://www.npmjs.com/package/dotenv) file with the environment variables: ```DBdatabase=[NAME OF YOUR DATABASE]```, ```DBusername=[NAME OF YOUR DATABASE user]```, ```DBpassword=[PASSWORD FOR YOUR DATABASE USER]``` and ```host=[IP FOR YOUR DATABASE]```
 
-### Executing Bento 🍱 with Docker
+### Executing Bento 🍱
 
 * ```npm run build```
 * ```npm start```
